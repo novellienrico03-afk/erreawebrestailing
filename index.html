@@ -13,11 +13,11 @@
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, .sport-font { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
 
-        /* Animazioni della Hero */
+        /* Animazioni di ingresso fluide */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
-            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .delay-1 { animation-delay: 0.3s; }
         .delay-2 { animation-delay: 0.5s; }
@@ -26,25 +26,25 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Variabili colore per accenti */
+        /* Colori di brand */
         .text-gold { color: #D4AF37; }
         .bg-gold { background-color: #D4AF37; }
         .text-azzurro { color: #007FFF; }
         .text-errea-red { color: #E30613; }
 
-        /* Nascondere la barra di scorrimento */
+        /* Nascondere scrollbar per slider pulito */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Stile Apple per le caselle */
+        /* Stile Apple per le card (bordi molto arrotondati, ombra morbida) */
         .apple-box {
-            border-radius: 2rem; /* approx rounded-3xl */
+            border-radius: 2rem;
             background-color: #f9f9fb;
             transition: all 0.4s ease;
         }
         .apple-box:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
     </style>
 </head>
@@ -52,17 +52,21 @@
 
     <header class="relative h-screen w-full overflow-hidden bg-black text-white rounded-b-[4rem]">
         
-        <img 
-            src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2000&auto=format&fit=crop" 
-            alt="Dettaglio Maglia Nazionale Italiana Volley" 
-            class="absolute inset-0 z-0 object-cover w-full h-full opacity-60 rounded-b-[4rem]"
-        />
+        <video 
+            autoplay 
+            loop 
+            muted 
+            playsinline 
+            class="absolute inset-0 z-0 object-cover w-full h-full opacity-70"
+        >
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-black-fabric-texture-in-the-wind-33866-large.mp4" type="video/mp4">
+        </video>
         
-        <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 rounded-b-[4rem]"></div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 rounded-b-[4rem]"></div>
 
         <nav class="absolute top-0 w-full z-20 flex justify-between items-center p-8 lg:px-16">
             <div class="flex items-center gap-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Errea_logo.png" alt="Erreà Logo" class="h-10 w-auto">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Errea_logo.png" alt="Erreà Logo" class="h-10 w-auto invert">
                 <div class="text-3xl font-black tracking-tight cursor-pointer">
                     Erreà <span class="text-errea-red text-4xl">.</span>
                 </div>
@@ -75,71 +79,4 @@
             </ul>
             <div class="flex space-x-6">
                 <button aria-label="Cerca" class="hover:text-gold transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
-                <button aria-label="Carrello" class="hover:text-gold transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg></button>
-            </div>
-        </nav>
-
-        <div class="relative z-10 flex flex-col items-start justify-center h-full text-left px-8 lg:px-24 w-full md:w-2/3">
-            <p class="fade-in-up text-gold font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 sport-font">Official Technical Sponsor FIPAV</p>
-            <h1 class="fade-in-up delay-1 text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.85] mb-6">L'Eccellenza <br /> in Volo.</h1>
-            <p class="fade-in-up delay-2 max-w-xl text-base md:text-lg font-light tracking-wide mb-10 text-gray-200 leading-relaxed">Vesti l'orgoglio azzurro. Il kit ufficiale dei Campioni del Mondo, ingegnerizzato per massimizzare le performance.</p>
-            <div class="fade-in-up delay-2 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                <button class="px-8 py-4 bg-white text-black font-bold tracking-widest uppercase rounded-full hover:bg-gold hover:text-white transition-all duration-300">Acquista il Kit</button>
-                <button class="px-8 py-4 border border-white text-white font-bold tracking-widest uppercase rounded-full hover:bg-white hover:text-black transition-all duration-300">Scopri la Collezione</button>
-            </div>
-        </div>
-    </header>
-
-    <section class="py-24 bg-white text-black">
-        <div class="px-8 lg:px-24 mb-16">
-            <h2 class="text-4xl md:text-6xl font-black tracking-tight mb-4">Ingegneria del <span class="text- gold">Tessuto</span>.</h2>
-            <p class="text-xl text-gray-600 max-w-2xl font-light tracking-wide">Prestazioni assolute nel totale rispetto della tua pelle. Erreà è la prima azienda in Europa nel settore teamwear con certificazione Oeko-Tex Standard 100.</p>
-        </div>
-
-        <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-8 px-8 lg:px-24 pb-12">
-            
-            <div class="snap-start shrink-0 w-[85vw] md:w-[450px] apple-box overflow-hidden border border-gray-100">
-                <div class="h-64 bg-gray-200 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1584346067750-f801124430f8?q=80&w=1000&auto=format&fit=crop" alt="Oeko-Tex Standard 100" class="object-cover w-full h-full hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="p-10">
-                    <div class="text-gold font-bold text-sm tracking-widest uppercase mb-2 sport-font">Sicurezza</div>
-                    <h3 class="text-3xl font-black tracking-tight mb-4">Oeko-Tex Standard 100</h3>
-                    <p class="text-gray-700 font-light text-base leading-relaxed">Garantisce l'assoluta assenza di sostanze nocive per la salute in tutti i nostri capi, fin dal singolo filo.</p>
-                </div>
-            </div>
-
-            <div class="snap-start shrink-0 w-[85vw] md:w-[450px] apple-box overflow-hidden border border-gray-100">
-                <div class="h-64 bg-gray-200 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1504481057531-50e59a11dbba?q=80&w=1000&auto=format&fit=crop" alt="Ti-Energy 3.0 Technology" class="object-cover w-full h-full hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="p-10">
-                    <div class="text-gold font-bold text-sm tracking-widest uppercase mb-2 sport-font">Innovazione</div>
-                    <h3 class="text-3xl font-black tracking-tight mb-4">Ti-Energy 3.0</h3>
-                    <p class="text-gray-700 font-light text-base leading-relaxed">Tessuto antivirale e antibatterico arricchito con nanoparticelle di ossido di zinco per la massima protezione in campo.</p>
-                </div>
-            </div>
-
-            <div class="snap-start shrink-0 w-[85vw] md:w-[450px] apple-box overflow-hidden border border-gray-100">
-                <div class="h-64 bg-gray-200 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?q=80&w=1000&auto=format&fit=crop" alt="Termoregolazione Performance" class="object-cover w-full h-full hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="p-10">
-                    <div class="text-gold font-bold text-sm tracking-widest uppercase mb-2 sport-font">Performance</div>
-                    <h3 class="text-3xl font-black tracking-tight mb-4">Termoregolazione</h3>
-                    <p class="text-gray-700 font-light text-base leading-relaxed">Micro-texture a nido d'ape che espelle rapidamente il sudore, mantenendo il corpo asciutto durante le fasi più intense.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="py-24 bg-black relative rounded-t-[4rem] text-white">
-        <div class="text-center mb-20 px-4">
-            <h2 class="text-4xl md:text-6xl font-black tracking-tight mb-4">Scegli il tuo <span class="text-gold">Campo</span>.</h2>
-            <p class="text-gray-300 font-light max-w-xl mx-auto text-lg">Dal singolo atleta che cerca l'eccellenza, alle società sportive che vogliono dominare la stagione.</p>
-        </div>
-
-        <div class="flex flex-col md:flex-row gap-10 px-8 lg:px-24 h-auto md:h-[65vh]">
-            
-            <div class="relative flex-1 rounded-3xl overflow-hidden group cursor-pointer h-
+                <button aria-label="Carrello" class="hover:text-gold transition
