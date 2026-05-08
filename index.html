@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erreà - Il Tessuto dei Campioni</title>
+    <title>Erreà - L'Eccellenza in Volo</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -23,24 +23,27 @@
             }
         }
 
-        /* Colore oro personalizzato per i dettagli */
         .text-gold { color: #D4AF37; }
-        .bg-gold { background-color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        .hover\:border-gold:hover { border-color: #D4AF37; }
     </style>
 </head>
 <body class="relative h-screen w-full overflow-hidden bg-[#0A1128] text-white font-sans">
 
-    <div class="absolute inset-0 z-0 opacity-50 mix-blend-overlay">
-        <img 
-            src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2000&auto=format&fit=crop" 
-            alt="Nazionale Italiana Volley" 
-            class="object-cover w-full h-full"
-        />
-    </div>
+    <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline 
+        class="absolute inset-0 z-0 object-cover w-full h-full opacity-60 mix-blend-overlay"
+    >
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-playing-volleyball-on-the-beach-140-large.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+    </video>
 
-    <div class="absolute inset-0 z-0 bg-gradient-to-t from-[#0A1128] via-transparent to-transparent opacity-90"></div>
+    <div class="absolute inset-0 z-0 bg-gradient-to-r from-[#0A1128] via-[#0A1128]/70 to-transparent opacity-90"></div>
 
-    <nav class="absolute top-0 w-full z-20 flex justify-between items-center p-8">
+    <nav class="absolute top-0 w-full z-20 flex justify-between items-center p-8 lg:px-16">
         <div class="text-3xl font-black tracking-tight cursor-pointer">
             Erreà <span class="text-gold text-4xl">.</span>
         </div>
@@ -51,39 +54,5 @@
             <li class="hover:text-gold transition-colors cursor-pointer pb-1 border-b-2 border-transparent hover:border-gold">L'Azienda</li>
         </ul>
         <div class="flex space-x-6">
-            <button aria-label="Search" class="hover:text-gold transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-            </button>
-            <button aria-label="Cart" class="hover:text-gold transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-            </button>
-        </div>
-    </nav>
-
-    <div class="relative z-10 flex flex-col items-start justify-center h-full text-left px-12 md:px-24">
-        
-        <p class="fade-in-up text-gold font-bold tracking-[0.3em] uppercase text-sm mb-4">
-            Official Technical Sponsor FIPAV
-        </p>
-
-        <h1 class="fade-in-up delay-1 text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6">
-            Sul tetto <br /> del mondo.
-        </h1>
-        
-        <p class="fade-in-up delay-2 max-w-lg text-lg font-light tracking-wide mb-10 text-gray-300 leading-relaxed">
-            L'orgoglio azzurro veste l'innovazione. Scopri il kit ufficiale della Nazionale Italiana, progettato per dominare il campo con leggerezza e precisione assoluta.
-        </p>
-        
-        <div class="fade-in-up delay-2 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-            <button class="px-8 py-4 bg-white text-[#0A1128] font-bold tracking-widest uppercase hover:bg-gray-200 transition-all duration-300 shadow-lg">
-                Acquista la Maglia
-            </button>
-            <button class="px-8 py-4 border border-white text-white font-bold tracking-widest uppercase hover:bg-white hover:text-[#0A1128] transition-all duration-300 flex items-center justify-center">
-                Esplora la Collezione
-            </button>
-        </div>
-        
-    </div>
-
-</body>
-</html>
+            <button aria-label="Cerca" class="hover:text-gold transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6
