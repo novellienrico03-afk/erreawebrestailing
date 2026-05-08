@@ -7,13 +7,13 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, .sport-font { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
 
-        /* Animazioni di ingresso fluide */
+        /* Animazioni di ingresso fluide per un feeling Big Tech */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
@@ -26,57 +26,49 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Colori di brand */
+        /* Colori Identitari Erreà */
         .text-gold { color: #D4AF37; }
         .bg-gold { background-color: #D4AF37; }
-        .text-azzurro { color: #007FFF; }
         .text-errea-red { color: #E30613; }
 
-        /* Nascondere scrollbar per slider pulito */
+        /* Rimozione barre di scorrimento per slider puliti */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Stile Apple per le card (bordi molto arrotondati, ombra morbida) */
+        /* Stile Apple: Arrotondamento estremo e ombre morbide */
         .apple-box {
-            border-radius: 2rem;
+            border-radius: 2.5rem;
             background-color: #f9f9fb;
-            transition: all 0.4s ease;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .apple-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        /* Overlay sfumato per garantire la leggibilità del testo sul video */
+        .hero-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
         }
     </style>
 </head>
 <body class="w-full bg-white text-black overflow-x-hidden">
 
-    <header class="relative h-screen w-full overflow-hidden bg-black text-white rounded-b-[4rem]">
+    <header class="relative h-screen w-full overflow-hidden bg-black text-white rounded-b-[5rem]">
         
         <video 
             autoplay 
             loop 
             muted 
             playsinline 
-            class="absolute inset-0 z-0 object-cover w-full h-full opacity-70"
+            poster="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2000&auto=format&fit=crop"
+            class="absolute inset-0 z-0 object-cover w-full h-full opacity-60"
         >
             <source src="https://assets.mixkit.co/videos/preview/mixkit-black-fabric-texture-in-the-wind-33866-large.mp4" type="video/mp4">
         </video>
         
-        <div class="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 rounded-b-[4rem]"></div>
+        <div class="absolute inset-0 z-10 hero-overlay rounded-b-[5rem]"></div>
 
-        <nav class="absolute top-0 w-full z-20 flex justify-between items-center p-8 lg:px-16">
-            <div class="flex items-center gap-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Errea_logo.png" alt="Erreà Logo" class="h-10 w-auto invert">
-                <div class="text-3xl font-black tracking-tight cursor-pointer">
-                    Erreà <span class="text-errea-red text-4xl">.</span>
-                </div>
-            </div>
-            <ul class="hidden md:flex space-x-10 text-xs font-bold tracking-[0.2em] uppercase sport-font">
-                <li class="hover:text-gold transition-colors cursor-pointer pb-1 border-b-2 border-transparent hover:border-gold">Volley</li>
-                <li class="hover:text-gold transition-colors cursor-pointer pb-1 border-b-2 border-transparent hover:border-gold">Calcio</li>
-                <li class="hover:text-gold transition-colors cursor-pointer pb-1 border-b-2 border-transparent hover:border-gold">Teamwear</li>
-                <li class="hover:text-gold transition-colors cursor-pointer pb-1 border-b-2 border-transparent hover:border-gold">L'Azienda</li>
-            </ul>
-            <div class="flex space-x-6">
-                <button aria-label="Cerca" class="hover:text-gold transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
-                <button aria-label="Carrello" class="hover:text-gold transition
+        <nav class="absolute top-0 w-full z-30 flex justify-between items-center p-8 lg:px-20">
+            <div class="flex items-center gap-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Errea_logo.png" alt="Erreà Logo" class="h-10 w-auto
